@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2022 lihz
- * 
- * This software is released under the MIT License.
- * https://opensource.org/licenses/MIT
- */
-
 /*
  * @lc app=leetcode.cn id=1 lang=typescript
  *
