@@ -6,21 +6,21 @@
 
 // @lc code=start
 function romanToInt(s: string): number {
-  const map = new Map();
+  const map = new Map([
+    ['I', 1],
+    ['V', 5],
+    ['X', 10],
+    ['L', 50],
+    ['C', 100],
+    ['D', 500],
+    ['M', 1000]
+  ]);
   let result: number = 0;
   let lastValue: number = 0;
 
-  map.set('I', 1);
-  map.set('V', 5);
-  map.set('X', 10);
-  map.set('L', 50);
-  map.set('C', 100);
-  map.set('D', 500);
-  map.set('M', 1000);
-
   for (let i = 0; i < s.length; i++) {
     const char: string = s.charAt(i);
-    const value: number = map.get(char);
+    const value: number = map.get(char) ?? 0;
 
     result += lastValue < value ? value - 2 * lastValue : value;
     lastValue = value;
