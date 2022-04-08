@@ -5,26 +5,30 @@
  */
 
 // @lc code=start
+/**
+ * 使用Set存储非重复的内容。因为Set与Array相比，在操作数据上有更大的性能优势
+ * * 时间复杂度为O(n) 空间复杂度为O(|∑|)
+ */
 function lengthOfLongestSubstring(s: string): number {
   // const 与 let性能相差比较大
-  const saver: string[] = [];
-  let size: number = 0;
+  const saver: Set<string> = new Set();
+  const size: number = s.length;
+  let rk: number = -1;
+  let max: number = 0;
 
-  for (let i = 0; i < s.length; i++) {
-    const char: string = s.charAt(i);
-
-    if (saver.includes(char)) {
-      const index: number = saver.lastIndexOf(char);
-
-      size = Math.max(saver.length, size);
-      saver.splice(0, index + 1);
-      // slice性能与splice相差很大
-      // saver = saver.slice(index + 1);
+  for (let lk = 0; lk < s.length; lk++) {
+    if (lk !== 0) {
+      saver.delete(s.charAt(lk - 1));
     }
 
-    saver.push(char);
+    while (rk < size && !saver.has(s.charAt(rk + 1))) {
+      saver.add(s.charAt(rk + 1));
+      ++rk;
+    }
+
+    max = Math.max(saver.size, max);
   }
 
-  return  Math.max(saver.length, size);
+  return max;
 }
 // @lc code=end
