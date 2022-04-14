@@ -22,7 +22,7 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
   let right: number = m;
 
   while (left < right) {
-    const i: number = Math.floor((right - left + 1) / 2);
+    const i: number = left + Math.floor((right - left + 1) / 2);
     const j: number = totalLeft - i;
 
     if (nums1[i - 1] > nums2[j]) {
@@ -33,19 +33,19 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
   }
 
   const i: number = left;
-  const j: number = totalLeft - left;
+  const j: number = totalLeft - i;
 
-  const minNum1: number = nums1[i - 1] ?? Number.MAX_VALUE;
-  const maxNum1: number = nums1[i] ?? Number.MAX_VALUE;
-  const minNum2: number = nums2[j - 1] ?? Number.MAX_VALUE;
-  const maxNum2: number = nums2[j] ?? Number.MAX_VALUE;
-
-  console.log(i, j, minNum1, maxNum1, minNum2, maxNum2);
+  const num1LeftMax: number = i === 0 ? Number.MIN_VALUE : nums1[i - 1];
+  const num1RightMin: number = i === m ? Number.MAX_VALUE : nums1[i];
+  const num2LeftMax: number = j === 0 ? Number.MIN_VALUE : nums2[j - 1];
+  const num2RightMin: number = j === n ? Number.MAX_VALUE : nums2[j];
 
   // 若除不尽，表示为奇数个子元素
   return (m + n) % 2 === 1
-    ? Math.min(minNum1, maxNum2)
-    : (Math.min(maxNum1, minNum2) + Math.min(minNum1, maxNum2)) / 2;
+    ? Math.max(num1LeftMax, num2LeftMax)
+    : (Math.max(num1LeftMax, num2LeftMax) +
+        Math.min(num1RightMin, num2RightMin)) /
+        2;
 }
 // @lc code=end
 

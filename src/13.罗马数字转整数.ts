@@ -20,7 +20,7 @@ function romanToInt(s: string): number {
 
   for (let i = 0; i < s.length; i++) {
     const char: string = s.charAt(i);
-    const value: number = map.get(char) ?? 0;
+    const value: number = map.get(char) as number;
 
     result += lastValue < value ? value - 2 * lastValue : value;
     lastValue = value;

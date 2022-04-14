@@ -30,15 +30,15 @@ function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null
 ): ListNode | null {
-  let head = null;
-  let cursor = null;
-  let carryOver = 0;
+  let head: ListNode | null = null;
+  let cursor: ListNode | null = null;
+  let carryOver: number = 0;
 
   while (l1 || l2) {
-    const val1 = l1?.val ?? 0;
-    const val2 = l2?.val ?? 0;
-    const sum = val1 + val2 + carryOver;
-    const value = sum % 10;
+    const val1: number = l1?.val ?? 0;
+    const val2: number = l2?.val ?? 0;
+    const sum: number = val1 + val2 + carryOver;
+    const value: number = sum % 10;
 
     carryOver = (sum / 10) >> 0;
 
@@ -48,7 +48,7 @@ function addTwoNumbers(
     } else {
       // @ts-ignore
       cursor.next = new ListNode(value);
-      cursor = (cursor as any)?.next ?? cursor;
+      cursor = (cursor as unknown as ListNode).next;
     }
 
     if (l1 !== null) {
@@ -61,7 +61,7 @@ function addTwoNumbers(
   }
 
   if (carryOver > 0) {
-    cursor.next = new ListNode(carryOver);
+    (cursor as unknown as ListNode).next = new ListNode(carryOver);
   }
 
   return head;
