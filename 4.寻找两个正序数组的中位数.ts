@@ -5,39 +5,45 @@
  */
 
 // @lc code=start
-
-/**
- * 方式一
- * 这种方式最简单粗暴，将两个数组合并
- * 然后重新进行排序，这样就重新得到一个有序数组
- * 最后，取数组中位数即可获取最后结果
- * * 时间复杂度为O(m+n)  空间复杂度为O(m+n)
- */
 function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
-  const nums: number[] = nums1.concat(nums2);
+  if (nums1.length > nums2.length) {
+    const tmp: number[] = nums1;
 
-  nums.sort((a, b) => a - b);
-
-  if (nums.length % 2 === 0) {
-    const middleIndex: number = nums.length / 2;
-
-    return (nums[middleIndex - 1] + nums[middleIndex]) / 2;
+    nums1 = nums2;
+    nums2 = tmp;
   }
 
-  const middleIndex: number = Math.floor(nums.length / 2);
+  let m: number = nums1.length;
+  let n: number = nums2.length;
 
-  return nums[middleIndex];
+  const totalLeft: number = Math.floor((m + n + 1) / 2);
+
+  let left: number = 0;
+  let right: number = m;
+
+  while (left < right) {
+    const i: number = Math.floor((right - left + 1) / 2);
+    const j: number = totalLeft - i;
+
+    if (nums1[i - 1] > nums2[j]) {
+      right = i - 1;
+    } else {
+      left = i;
+    }
+  }
+
+  const i: number = left;
+  const j: number = totalLeft - left;
+  const minNum1: number = nums1[i - 1] ?? Number.MAX_VALUE;
+  const maxNum1: number = nums1[i] ?? Number.MAX_VALUE;
+  const minNum2: number = nums2[j - 1] ?? Number.MAX_VALUE;
+  const maxNum2: number = nums2[j] ?? Number.MAX_VALUE;
+
+  // 若除不尽，表示为奇数个子元素
+  return (m + n) % 2 === 1
+    ? Math.min(maxNum1, minNum2)
+    : (Math.min(maxNum1, minNum2) + Math.min(minNum1, maxNum2)) / 2;
 }
-
-/**
- * 方式二
- * 这种方式相比前一种方式优化了空间复杂度
- * 首先，我们可以知道中位数的位置。
- * 然后根据中位数的位置，我们将两个数组做比较操作（变相的排序）
- * 直到比较到中位数为止
- * * 时间复杂度为O(m+n)  空间复杂度为O(1)
- */
-// function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
-  
-// }
 // @lc code=end
+
+export default findMedianSortedArrays;
