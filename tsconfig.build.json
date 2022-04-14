@@ -2,11 +2,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "incremental": false,
-    "outDir": "./dist"
+    "outDir": "./release",
+    "module": "ESNext"
   },
   "exclude": [
     "node_modules",
-    "dist",
+    "release",
     "**/*.config.ts",
     "**/__tests__/**/*",
     "**/*.test.ts",

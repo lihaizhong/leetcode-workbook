@@ -4,7 +4,7 @@
   "description": "leetcode练习题",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist/ && tsc -p ./tsconfig.build.json",
+    "build": "rm -rf release/ && tsc -p ./tsconfig.build.json",
     "test": "jest"
   },
   "repository": {
