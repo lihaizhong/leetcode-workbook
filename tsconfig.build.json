@@ -2,18 +2,15 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "incremental": false,
+    "rootDir": "./src",
     "outDir": "./release",
     "module": "ESNext"
   },
   "exclude": [
-    "node_modules",
-    "release",
-    "**/*.config.ts",
-    "**/__tests__/**/*",
-    "**/*.test.ts",
-    "**/*.spec.ts"
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts"
   ],
   "include": [
-    "./*.ts"
+    "src/**/*"
   ]
 }
