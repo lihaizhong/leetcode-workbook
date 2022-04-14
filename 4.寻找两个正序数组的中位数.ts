@@ -34,14 +34,17 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
 
   const i: number = left;
   const j: number = totalLeft - left;
+
   const minNum1: number = nums1[i - 1] ?? Number.MAX_VALUE;
   const maxNum1: number = nums1[i] ?? Number.MAX_VALUE;
   const minNum2: number = nums2[j - 1] ?? Number.MAX_VALUE;
   const maxNum2: number = nums2[j] ?? Number.MAX_VALUE;
 
+  console.log(i, j, minNum1, maxNum1, minNum2, maxNum2);
+
   // 若除不尽，表示为奇数个子元素
   return (m + n) % 2 === 1
-    ? Math.min(maxNum1, minNum2)
+    ? Math.min(minNum1, maxNum2)
     : (Math.min(maxNum1, minNum2) + Math.min(minNum1, maxNum2)) / 2;
 }
 // @lc code=end
