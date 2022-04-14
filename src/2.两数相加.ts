@@ -4,6 +4,15 @@
  * [2] 两数相加
  */
 
+export class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val: number = 0, next: ListNode | null = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+
 // @lc code=start
 /**
  * Definition for singly-linked list.
@@ -18,11 +27,8 @@
  */
 
 function addTwoNumbers(
-  // @ts-ignore
   l1: ListNode | null,
-  // @ts-ignore
   l2: ListNode | null
-  // @ts-ignore
 ): ListNode | null {
   let head = null;
   let cursor = null;
@@ -34,7 +40,7 @@ function addTwoNumbers(
     const sum = val1 + val2 + carryOver;
     const value = sum % 10;
 
-    carryOver = sum / 10 >> 0;
+    carryOver = (sum / 10) >> 0;
 
     if (head === null) {
       // @ts-ignore
@@ -55,10 +61,11 @@ function addTwoNumbers(
   }
 
   if (carryOver > 0) {
-    // @ts-ignore
     cursor.next = new ListNode(carryOver);
   }
 
   return head;
 }
 // @lc code=end
+
+export default addTwoNumbers;

@@ -30,3 +30,4 @@ function romanToInt(s: string): number {
 };
 // @lc code=end
 
+export default romanToInt;
