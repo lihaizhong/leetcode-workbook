@@ -1,4 +1,3 @@
-"use strict";
 /*
  * @lc app=leetcode.cn id=13 lang=typescript
  *
@@ -6,7 +5,6 @@
  */
 // @lc code=start
 function romanToInt(s) {
-    var _a;
     const map = new Map([
         ['I', 1],
         ['V', 5],
@@ -20,7 +18,7 @@ function romanToInt(s) {
     let lastValue = 0;
     for (let i = 0; i < s.length; i++) {
         const char = s.charAt(i);
-        const value = (_a = map.get(char)) !== null && _a !== void 0 ? _a : 0;
+        const value = map.get(char);
         result += lastValue < value ? value - 2 * lastValue : value;
         lastValue = value;
     }
@@ -28,3 +26,4 @@ function romanToInt(s) {
 }
 ;
 // @lc code=end
+export default romanToInt;

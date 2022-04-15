@@ -1,9 +1,14 @@
-"use strict";
 /*
  * @lc app=leetcode.cn id=2 lang=typescript
  *
  * [2] 两数相加
  */
+export class ListNode {
+    constructor(val = 0, next = null) {
+        this.val = val;
+        this.next = next;
+    }
+}
 // @lc code=start
 /**
  * Definition for singly-linked list.
@@ -16,14 +21,8 @@
  *   }
  * }
  */
-function addTwoNumbers(
-// @ts-ignore
-l1, 
-// @ts-ignore
-l2
-// @ts-ignore
-) {
-    var _a, _b, _c;
+function addTwoNumbers(l1, l2) {
+    var _a, _b;
     let head = null;
     let cursor = null;
     let carryOver = 0;
@@ -32,7 +31,7 @@ l2
         const val2 = (_b = l2 === null || l2 === void 0 ? void 0 : l2.val) !== null && _b !== void 0 ? _b : 0;
         const sum = val1 + val2 + carryOver;
         const value = sum % 10;
-        carryOver = sum / 10 >> 0;
+        carryOver = (sum / 10) >> 0;
         if (head === null) {
             // @ts-ignore
             head = cursor = new ListNode(value);
@@ -40,7 +39,7 @@ l2
         else {
             // @ts-ignore
             cursor.next = new ListNode(value);
-            cursor = (_c = cursor === null || cursor === void 0 ? void 0 : cursor.next) !== null && _c !== void 0 ? _c : cursor;
+            cursor = cursor.next;
         }
         if (l1 !== null) {
             l1 = l1.next;
@@ -50,9 +49,9 @@ l2
         }
     }
     if (carryOver > 0) {
-        // @ts-ignore
         cursor.next = new ListNode(carryOver);
     }
     return head;
 }
 // @lc code=end
+export default addTwoNumbers;

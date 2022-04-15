@@ -1,4 +1,3 @@
-"use strict";
 /*
  * @lc app=leetcode.cn id=1 lang=typescript
  *
@@ -18,3 +17,4 @@ function twoSum(nums, target) {
     return [];
 }
 // @lc code=end
+export default twoSum;

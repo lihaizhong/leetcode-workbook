@@ -1,4 +1,3 @@
-"use strict";
 /*
  * @lc app=leetcode.cn id=3 lang=typescript
  *
@@ -23,3 +22,4 @@ function lengthOfLongestSubstring(s) {
     return max;
 }
 // @lc code=end
+export default lengthOfLongestSubstring;
