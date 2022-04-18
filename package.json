@@ -15,6 +15,7 @@
   "author": "lihz",
   "license": "ISC",
   "devDependencies": {
+    "@jest/globals": "^27.5.1",
     "@types/jest": "^27.4.1",
     "jest": "^27.5.1",
     "serve": "^13.0.2",
