@@ -8,4 +8,8 @@ describe("最长回文子串", () => {
   it("cbbd", () => {
     expect(longestPalindrome("cbbd")).toBe("bb")
   })
+
+  it("baabebacd", () => {
+    expect(longestPalindrome("baabebacd")).toBe("abeba")
+  })
 })
