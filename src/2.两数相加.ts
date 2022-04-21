@@ -22,18 +22,6 @@ export class ListNode {
 }
 
 // @lc code=start
-/**
- * Definition for singly-linked list.
- * class ListNode {
- *   val: number;
- *   next: ListNode | null;
- *   constructor(val?: number, next?: ListNode | null) {
- *     this.val = val === undefined ? 0 : val;
- *     this.next = next === undefined ? null : next;
- *   }
- * }
- */
-
 function addTwoNumbers(
   l1: ListNode | null,
   l2: ListNode | null
@@ -51,7 +39,6 @@ function addTwoNumbers(
     carryOver = (sum / 10) >> 0;
 
     if (head === null) {
-      // @ts-ignore
       head = cursor = new ListNode(value);
     } else {
       // @ts-ignore

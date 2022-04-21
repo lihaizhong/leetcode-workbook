@@ -1,17 +1,4 @@
-/*
- * @lc app=leetcode.cn id=3 lang=typescript
- *
- * [3] 无重复字符的最长子串
- *
- * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-by-leetc-2/
- *
- * 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
- *
- * 方法一：滑动窗口
- */
-// @lc code=start
 function lengthOfLongestSubstring(s) {
-    // const 与 let性能相差比较大
     const saver = new Set();
     const size = s.length;
     let rk = 0;
@@ -27,5 +14,4 @@ function lengthOfLongestSubstring(s) {
     }
     return max;
 }
-// @lc code=end
 export default lengthOfLongestSubstring;

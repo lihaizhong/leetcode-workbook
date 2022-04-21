@@ -4,7 +4,8 @@
     "incremental": false,
     "rootDir": "./src",
     "outDir": "./release",
-    "module": "ESNext"
+    "module": "ESNext",
+    "charset": "utf8"
   },
   "exclude": [
     "src/**/*.test.ts",
