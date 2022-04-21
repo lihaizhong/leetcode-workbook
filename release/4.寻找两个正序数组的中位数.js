@@ -2,6 +2,14 @@
  * @lc app=leetcode.cn id=4 lang=typescript
  *
  * [4] 寻找两个正序数组的中位数
+ *
+ * https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xun-zhao-liang-ge-you-xu-shu-zu-de-zhong-wei-s-114/
+ *
+ * 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。
+ * 算法的时间复杂度应该为 O(log (m+n)) 。
+ *
+ * 方法一：二分查找
+ * 方法二：划分数组
  */
 // @lc code=start
 function findMedianSortedArrays(nums1, nums2) {

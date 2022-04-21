@@ -2,40 +2,61 @@
  * @lc app=leetcode.cn id=5 lang=typescript
  *
  * [5] 最长回文子串
+ *
+ * https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zui-chang-hui-wen-zi-chuan-by-leetcode-solution/
+ *
+ * 给你一个字符串s，找到s中最长的回文子串。
+ *
+ * 方法一：动态规划（时间复杂度：O(n^2), 空间复杂度：O(n^2)）
+ * 方法二：中心扩展算法(时间复杂度：O(n^2), 空间复杂度：O(1))
+ * 方法三：Manacher算法
  */
 // @lc code=start
+/**
+ * 获取回文子串
+ * @param {string} s
+ * @param {number} leftIndex
+ * @param {number} rightIndex
+ * @returns {string}
+ */
+function palindrome(s, leftIndex, rightIndex) {
+    const len = s.length;
+    while (leftIndex >= 0 && rightIndex < len && s[leftIndex] === s[rightIndex]) {
+        leftIndex--;
+        rightIndex++;
+    }
+    // 字符串拼接的效率比较低，故在只最后进行截取操作。
+    return s.substring(leftIndex + 1, rightIndex);
+}
+/**
+ * 比较并获取最大的回文子串
+ * @param {string} s1
+ * @param {string} s2
+ * @param {string} s3
+ * @returns {string}
+ */
+function max(s1, s2, s3) {
+    return [s1, s2, s3].reduce((l, r) => (l.length >= r.length ? l : r), "");
+}
+/**
+ * 获取最长回文子串
+ * @param {string} s
+ * @returns {string}
+ */
 function longestPalindrome(s) {
     const len = s.length;
-    let str = "";
-    for (let i = 0; i < len; i++) {
-        const source = s[i];
-        for (let j = len - 1; j > i; j--) {
-            const target = s[j];
-            if (source === target) {
-                let matched = true;
-                for (let k = i + 1; k < j - i - 1; k += 2) {
-                    const a = s[k];
-                    // 坐标内敛
-                    // k = i + 1
-                    // m = j - 1
-                    // => k - i = j - m
-                    // => m = j - k + i
-                    const b = s[j - k + i];
-                    if (a !== b) {
-                        matched = false;
-                        break;
-                    }
-                }
-                if (matched) {
-                    const tmp = s.slice(i, j + 1);
-                    if (tmp.length > str.length) {
-                        str = tmp;
-                    }
-                }
-            }
-        }
+    let maxStr = "";
+    if (len < 2) {
+        return s;
     }
-    return str;
+    for (let i = 0; i < len; i++) {
+        // 截取奇数回文串
+        const s1 = palindrome(s, i, i);
+        // 截取偶数回文串
+        const s2 = palindrome(s, i, i + 1);
+        maxStr = max(maxStr, s1, s2);
+    }
+    return maxStr;
 }
 // @lc code=end
 export default longestPalindrome;
