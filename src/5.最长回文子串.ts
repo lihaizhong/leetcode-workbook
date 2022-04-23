@@ -21,7 +21,7 @@
  * @param {number} rightIndex 
  * @returns {string}
  */
-function palindrome(s: string, leftIndex: number, rightIndex: number): string {
+function expandAroundCenter(s: string, leftIndex: number, rightIndex: number): string {
   const len: number = s.length;
 
   while (leftIndex >= 0 && rightIndex < len && s[leftIndex] === s[rightIndex]) {
@@ -62,9 +62,9 @@ function longestPalindrome(s: string): string {
 
   for (let i: number = 0; i < len; i++) {
     // 截取奇数回文串
-    const s1: string = palindrome(s, i, i);
+    const s1: string = expandAroundCenter(s, i, i);
     // 截取偶数回文串
-    const s2: string = palindrome(s, i, i + 1);
+    const s2: string = expandAroundCenter(s, i, i + 1);
 
     maxStr = max(maxStr, s1, s2);
   }

@@ -1,4 +1,4 @@
-function palindrome(s, leftIndex, rightIndex) {
+function expandAroundCenter(s, leftIndex, rightIndex) {
     const len = s.length;
     while (leftIndex >= 0 && rightIndex < len && s[leftIndex] === s[rightIndex]) {
         leftIndex--;
@@ -16,8 +16,8 @@ function longestPalindrome(s) {
         return s;
     }
     for (let i = 0; i < len; i++) {
-        const s1 = palindrome(s, i, i);
-        const s2 = palindrome(s, i, i + 1);
+        const s1 = expandAroundCenter(s, i, i);
+        const s2 = expandAroundCenter(s, i, i + 1);
         maxStr = max(maxStr, s1, s2);
     }
     return maxStr;
