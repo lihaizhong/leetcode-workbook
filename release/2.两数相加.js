@@ -1,9 +1,13 @@
-export class ListNode {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ListNode = void 0;
+class ListNode {
     constructor(val = 0, next = null) {
         this.val = val;
         this.next = next;
     }
 }
+exports.ListNode = ListNode;
 function addTwoNumbers(l1, l2) {
     var _a, _b;
     let head = null;
@@ -34,4 +38,4 @@ function addTwoNumbers(l1, l2) {
     }
     return head;
 }
-export default addTwoNumbers;
+exports.default = addTwoNumbers;

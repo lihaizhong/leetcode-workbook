@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function findMedianSortedArrays(nums1, nums2) {
     if (nums1.length > nums2.length) {
         const tmp = nums1;
@@ -31,4 +33,4 @@ function findMedianSortedArrays(nums1, nums2) {
             Math.min(num1RightMin, num2RightMin)) /
             2;
 }
-export default findMedianSortedArrays;
+exports.default = findMedianSortedArrays;

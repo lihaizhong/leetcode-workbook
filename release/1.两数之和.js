@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function twoSum(nums, target) {
     const map = new Map();
     for (let i = 0; i < nums.length; i++) {
@@ -10,4 +12,4 @@ function twoSum(nums, target) {
     }
     return [];
 }
-export default twoSum;
+exports.default = twoSum;

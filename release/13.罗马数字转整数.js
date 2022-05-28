@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function romanToInt(s) {
     const map = new Map([
         ['I', 1],
@@ -19,4 +21,4 @@ function romanToInt(s) {
     return result;
 }
 ;
-export default romanToInt;
+exports.default = romanToInt;

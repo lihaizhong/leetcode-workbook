@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function expandAroundCenter(s, leftIndex, rightIndex) {
     const len = s.length;
     while (leftIndex >= 0 && rightIndex < len && s[leftIndex] === s[rightIndex]) {
@@ -22,4 +24,4 @@ function longestPalindrome(s) {
     }
     return maxStr;
 }
-export default longestPalindrome;
+exports.default = longestPalindrome;

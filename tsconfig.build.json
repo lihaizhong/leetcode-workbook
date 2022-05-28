@@ -4,7 +4,7 @@
     "incremental": false,
     "rootDir": "./src",
     "outDir": "./release",
-    "module": "ESNext",
+    "module": "CommonJS",
     "charset": "utf8"
   },
   "exclude": [

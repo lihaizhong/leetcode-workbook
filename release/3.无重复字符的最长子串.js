@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function lengthOfLongestSubstring(s) {
     const saver = new Set();
     const size = s.length;
@@ -14,4 +16,4 @@ function lengthOfLongestSubstring(s) {
     }
     return max;
 }
-export default lengthOfLongestSubstring;
+exports.default = lengthOfLongestSubstring;
