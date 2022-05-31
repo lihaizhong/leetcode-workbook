@@ -2,8 +2,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "incremental": false,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "rootDir": "./src",
     "outDir": "./release",
+    "declarationDir": "./release",
     "module": "CommonJS",
     "charset": "utf8"
   },

@@ -2,6 +2,7 @@
     "cSpell.words": [
         "automock",
         "bjyldm",
+        "codepaths",
         "lcov",
         "leetcode",
         "lihaizh",
@@ -9,6 +10,7 @@
         "Manacher",
         "nums",
         "Serializers",
+        "tsbuildinfo",
         "unmocked"
     ]
 }
