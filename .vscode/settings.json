@@ -11,6 +11,7 @@
         "nums",
         "Serializers",
         "tsbuildinfo",
-        "unmocked"
+        "unmocked",
+        "Vlissides"
     ]
 }
