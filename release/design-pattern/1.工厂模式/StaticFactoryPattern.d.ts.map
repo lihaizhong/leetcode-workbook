@@ -1,0 +1,1 @@
+{"version":3,"file":"StaticFactoryPattern.d.ts","sourceRoot":"","sources":["../../../src/design-pattern/1.工厂模式/StaticFactoryPattern.ts"],"names":[],"mappings":"AAAA,qBAAa,IAAI;IACf,OAAO,CAAC,IAAI,CAAS;IAErB,OAAO,CAAC,QAAQ,CAAW;gBAEf,OAAO,EAAE,GAAG;IAKxB,MAAM,CAAC,WAAW,CAAC,IAAI,EAAE,MAAM;IAsB/B,IAAI;CAGL"}

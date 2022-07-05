@@ -10,13 +10,15 @@ function convert(s, numRows) {
     let zStr = "";
     for (let i = 0; i < len; i++) {
         let c;
-        if (i < n || i > (numRows - 1) * n) {
-            const r = i % oneCycle;
-            c = s.charAt(oneCycle * (n - 1) + r);
+        if (i < n) {
+            c = s.charAt(oneCycle * i);
+        }
+        else if (i >= (numRows - 1) * n) {
+            c = s.charAt(oneCycle * (i - (numRows - 1) * n) + numRows - 1);
         }
         else {
-            if (i % oneCycle < numRows) {
-                const r = i % oneCycle;
+            if ((i % oneCycle) % 2 === 0) {
+                const r = oneCycle * (i / 2 - (numRows - 1) * n);
                 c = s.charAt(oneCycle * (n - 1) + r);
             }
             else {
@@ -31,3 +33,4 @@ function convert(s, numRows) {
     return zStr;
 }
 exports.default = convert;
+//# sourceMappingURL=6.z-%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2.js.map
