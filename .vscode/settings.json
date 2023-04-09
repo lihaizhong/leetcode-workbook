@@ -12,6 +12,7 @@
         "Serializers",
         "tsbuildinfo",
         "unmocked",
+        "vitepress",
         "Vlissides"
     ]
 }
