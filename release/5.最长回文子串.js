@@ -1,28 +1,38 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function expandAroundCenter(s, leftIndex, rightIndex) {
-    const len = s.length;
-    while (leftIndex >= 0 && rightIndex < len && s[leftIndex] === s[rightIndex]) {
-        leftIndex--;
-        rightIndex++;
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
     }
-    return s.substring(leftIndex + 1, rightIndex);
-}
-function max(s1, s2, s3) {
-    return [s1, s2, s3].reduce((l, r) => (l.length >= r.length ? l : r), "");
-}
-function longestPalindrome(s) {
-    const len = s.length;
-    let maxStr = "";
-    if (len < 2) {
-        return s;
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports"], factory);
     }
-    for (let i = 0; i < len; i++) {
-        const s1 = expandAroundCenter(s, i, i);
-        const s2 = expandAroundCenter(s, i, i + 1);
-        maxStr = max(maxStr, s1, s2);
+})(function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    function expandAroundCenter(s, leftIndex, rightIndex) {
+        const len = s.length;
+        while (leftIndex >= 0 && rightIndex < len && s[leftIndex] === s[rightIndex]) {
+            leftIndex--;
+            rightIndex++;
+        }
+        return s.substring(leftIndex + 1, rightIndex);
     }
-    return maxStr;
-}
-exports.default = longestPalindrome;
+    function max(s1, s2, s3) {
+        return [s1, s2, s3].reduce((l, r) => (l.length >= r.length ? l : r), "");
+    }
+    function longestPalindrome(s) {
+        const len = s.length;
+        let maxStr = "";
+        if (len < 2) {
+            return s;
+        }
+        for (let i = 0; i < len; i++) {
+            const s1 = expandAroundCenter(s, i, i);
+            const s2 = expandAroundCenter(s, i, i + 1);
+            maxStr = max(maxStr, s1, s2);
+        }
+        return maxStr;
+    }
+    exports.default = longestPalindrome;
+});
 //# sourceMappingURL=5.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2.js.map
