@@ -15,6 +15,13 @@ const compare: ICompare = (a: number, b: number) => {
   return 0
 }
 
+/**
+ * 二分查找法
+ * @param target 
+ * @param list 
+ * @param internal_compare 
+ * @returns 
+ */
 export default function BinarySearch (target: number, list: number[], internal_compare: ICompare = compare): number | null {
   let low: number = 0
   let high: number = list.length - 1
