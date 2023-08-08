@@ -4,6 +4,8 @@ outline: deep
 
 # 设计模式
 
+![设计模式](/assets/the-relationship-between-design-patterns.jpeg)
+
 ## 什么是设计模式
 
 **设计模式是软件设计中常见问题的典型解决方案。** 它们就像能根据需求进行调整的预制蓝图，可用于解决代码中反复出现的设计问题。

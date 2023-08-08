@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "LeetCodeBook",
   description: "算法练习册",
+  // assetsDir: '/.vitepress/assets',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
