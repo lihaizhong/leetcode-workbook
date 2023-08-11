@@ -13,9 +13,9 @@ function convert(s: string, numRows: number): string {
   const len: number = s.length;
   const oneCycle: number = 2 * numRows - 2;
   const n: number = Math.ceil(len / oneCycle);
-  let zStr: string = "";
+  let zStr = "";
 
-  for (let i: number = 0; i < len; i++) {
+  for (let i = 0; i < len; i++) {
     let c: string;
 
     if (i < n) {

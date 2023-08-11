@@ -1,3 +1,8 @@
+/*
+ * @lc app=leetcode.cn id=6 lang=typescript
+ *
+ * [6] Z 字形变换
+ */
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,6 +14,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    // @lc code=start
     function convert(s, numRows) {
         if (numRows < 1) {
             return s;
@@ -31,7 +37,7 @@
                     c = s.charAt(oneCycle * (n - 1) + r);
                 }
                 else {
-                    const r = 2 * oneCycle - 2 - (i % oneCycle);
+                    const r = 2 * oneCycle - 2 - (i % oneCycle); // error
                     c = s.charAt(oneCycle * n - r);
                 }
             }
@@ -41,6 +47,7 @@
         }
         return zStr;
     }
+    // @lc code=end
     exports.default = convert;
 });
 //# sourceMappingURL=6.z-%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2.js.map

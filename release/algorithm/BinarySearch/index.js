@@ -10,14 +10,24 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const compare = (a, b) => {
+        // 目标值小了
         if (a < b) {
             return -1;
         }
+        // 目标值大了
         if (a > b) {
             return 1;
         }
+        // 目标值匹配成功
         return 0;
     };
+    /**
+     * 二分查找法
+     * @param target
+     * @param list
+     * @param internal_compare
+     * @returns
+     */
     function BinarySearch(target, list, internal_compare = compare) {
         let low = 0;
         let high = list.length - 1;

@@ -36,8 +36,8 @@ function romanToInt(s: string): number {
     ['D', 500],
     ['M', 1000]
   ]);
-  let result: number = 0;
-  let lastValue: number = 0;
+  let result = 0;
+  let lastValue = 0;
 
   for (let i = 0; i < s.length; i++) {
     const char: string = s.charAt(i);

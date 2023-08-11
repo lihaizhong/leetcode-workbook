@@ -5,6 +5,9 @@ export default defineConfig({
   title: "LeetCodeBook",
   description: "算法练习册",
   // assetsDir: '/.vitepress/assets',
+  markdown: {
+    lineNumbers: true
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -27,7 +30,9 @@ export default defineConfig({
       '/algorithm/': [
         {
           text: '算法',
-          items: []
+          items: [
+            { text: '两数之和', link: '/algorithm/两数之和' }
+          ]
         }
       ],
       '/design-pattern/': [

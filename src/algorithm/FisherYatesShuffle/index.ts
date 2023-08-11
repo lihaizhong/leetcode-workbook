@@ -3,7 +3,7 @@
  * @param {array<number>} values
  */
 export default function shuffle (values: number[]): number[] {
-  for (let i: number = 0; i < values.length; i++) {
+  for (let i = 0; i < values.length; i++) {
     const randomIndex: number = Math.floor(Math.random() * (i + 1))
     const itemAtIndex: number = values[i]
 

@@ -23,14 +23,16 @@
  */
 function expandAroundCenter(s: string, leftIndex: number, rightIndex: number): string {
   const len: number = s.length;
+  let left: number = leftIndex;
+  let right: number = rightIndex;
 
-  while (leftIndex >= 0 && rightIndex < len && s[leftIndex] === s[rightIndex]) {
-    leftIndex--;
-    rightIndex++;
+  while (left >= 0 && right < len && s[left] === s[right]) {
+    left = left - 1;
+    right = right + 1;
   }
 
   // 字符串拼接的效率比较低，故在只最后进行截取操作。
-  return s.substring(leftIndex + 1, rightIndex);
+  return s.substring(left + 1, right);
 }
 
 /**
@@ -54,13 +56,13 @@ function max(s1: string, s2: string, s3: string): string {
  */
 function longestPalindrome(s: string): string {
   const len: number = s.length;
-  let maxStr: string = "";
+  let maxStr = "";
 
   if (len < 2) {
     return s;
   }
 
-  for (let i: number = 0; i < len; i++) {
+  for (let i = 0; i < len; i++) {
     // 截取奇数回文串
     const s1: string = expandAroundCenter(s, i, i);
     // 截取偶数回文串

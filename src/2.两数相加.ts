@@ -15,7 +15,7 @@
 export class ListNode {
   val: number;
   next: ListNode | null;
-  constructor(val: number = 0, next: ListNode | null = null) {
+  constructor(val = 0, next: ListNode | null = null) {
     this.val = val;
     this.next = next;
   }
@@ -23,12 +23,14 @@ export class ListNode {
 
 // @lc code=start
 function addTwoNumbers(
-  l1: ListNode | null,
-  l2: ListNode | null
+  ln1: ListNode | null,
+  ln2: ListNode | null
 ): ListNode | null {
+  let l1 = ln1;
+  let l2 = ln2;
   let head: ListNode | null = null;
   let cursor: ListNode | null = null;
-  let carryOver: number = 0;
+  let carryOver = 0;
 
   while (l1 || l2) {
     const val1: number = l1?.val ?? 0;

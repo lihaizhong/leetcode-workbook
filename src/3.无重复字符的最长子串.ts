@@ -15,8 +15,8 @@ function lengthOfLongestSubstring(s: string): number {
   // const 与 let性能相差比较大
   const saver: Set<string> = new Set();
   const size: number = s.length;
-  let rk: number = 0;
-  let max: number = 0;
+  let rk = 0;
+  let max = 0;
 
   for (let lk = 0; lk < s.length && rk < size; lk++) {
     if (lk !== 0) {

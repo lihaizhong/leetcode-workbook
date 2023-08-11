@@ -9,6 +9,10 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * 洗牌算法（FisherYatesShuffle）
+     * @param {array<number>} values
+     */
     function shuffle(values) {
         for (let i = 0; i < values.length; i++) {
             const randomIndex = Math.floor(Math.random() * (i + 1));

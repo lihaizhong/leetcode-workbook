@@ -23,7 +23,7 @@ const compare: ICompare = (a: number, b: number) => {
  * @returns 
  */
 export default function BinarySearch (target: number, list: number[], internal_compare: ICompare = compare): number | null {
-  let low: number = 0
+  let low = 0
   let high: number = list.length - 1
 
   do {

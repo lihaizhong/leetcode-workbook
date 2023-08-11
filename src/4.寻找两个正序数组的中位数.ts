@@ -14,26 +14,30 @@
 
 // @lc code=start
 function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
-  if (nums1.length > nums2.length) {
-    const tmp: number[] = nums1;
+  let n1: number[]
+  let n2: number[]
 
-    nums1 = nums2;
-    nums2 = tmp;
+  if (nums1.length > nums2.length) {
+    n1 = nums2;
+    n2 = nums1;
+  } else {
+    n1 = nums1;
+    n2 = nums2;
   }
 
-  let m: number = nums1.length;
-  let n: number = nums2.length;
+  const m: number = n1.length;
+  const n: number = n2.length;
 
   const totalLeft: number = Math.floor((m + n + 1) / 2);
 
-  let left: number = 0;
+  let left = 0;
   let right: number = m;
 
   while (left < right) {
     const i: number = left + Math.floor((right - left + 1) / 2);
     const j: number = totalLeft - i;
 
-    if (nums1[i - 1] > nums2[j]) {
+    if (n1[i - 1] > n2[j]) {
       right = i - 1;
     } else {
       left = i;
@@ -43,10 +47,10 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
   const i: number = left;
   const j: number = totalLeft - i;
 
-  const num1LeftMax: number = i === 0 ? Number.MIN_SAFE_INTEGER : nums1[i - 1];
-  const num1RightMin: number = i === m ? Number.MAX_SAFE_INTEGER : nums1[i];
-  const num2LeftMax: number = j === 0 ? Number.MIN_SAFE_INTEGER : nums2[j - 1];
-  const num2RightMin: number = j === n ? Number.MAX_SAFE_INTEGER : nums2[j];
+  const num1LeftMax: number = i === 0 ? Number.MIN_SAFE_INTEGER : n1[i - 1];
+  const num1RightMin: number = i === m ? Number.MAX_SAFE_INTEGER : n1[i];
+  const num2LeftMax: number = j === 0 ? Number.MIN_SAFE_INTEGER : n2[j - 1];
+  const num2RightMin: number = j === n ? Number.MAX_SAFE_INTEGER : n2[j];
 
   // 若除不尽，表示为奇数个子元素
   return (m + n) % 2 === 1

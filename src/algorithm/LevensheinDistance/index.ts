@@ -23,7 +23,7 @@ export default function levensheinDistance(source: string, target: string): numb
     const sourceChar: string = source[i]
     let temp: number = i
 
-    for (let j: number = 0; j < targetLength; j++) {
+    for (let j = 0; j < targetLength; j++) {
       const targetChar: string = target[j]
       // 获取前一个数值
       const prevDistance: number = j === 0 ? i + 1 : space[j - 1]
