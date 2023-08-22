@@ -6,13 +6,7 @@
 
 // @lc code=start
 function longestCommonPrefix(strs: string[]): string {
-  let prefix: string = ''
-
-  for (let i = 0; i < strs[0].length; i++) {
-    
-  }
-
-  return prefix
+  return ''
 };
 // @lc code=end
 
