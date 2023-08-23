@@ -15,3 +15,9 @@
    3. `Design`，与设计文档相结合，来编写单元测试；
    4. `Error`，强制错误信息输入（如：非法数据、异常流程、非业务允许输入等），并得到预期的结果；
 5. 核心业务、核心应用、核心模块的增量代码要确保单元测试通过；
+
+[软件单元测试及测试用例设计](https://zhuanlan.zhihu.com/p/531145955)
+
+## 其他
+
+- [编程帮--算法](http://www.biancheng.net/algorithm/what-is-algorithm.html)

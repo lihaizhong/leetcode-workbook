@@ -16,10 +16,10 @@ hero:
 
 features:
   - title: 算法与数据结构
-    details: 算法是软件设计中特定问题的解题步骤。
+    details: 算法（algorithm）是解决特定问题的步骤描述，通俗地讲，就是描述解决问题步骤的方法。
   - title: 设计模式
-    details: 设计模式是软件设计中常见问题的典型解决方案。
+    details: 设计模式（design patterns）是软件设计中常见问题的典型解决方案。
   - title: 单元测试
-    details: 单元测试是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。
+    details: 单元测试（unit test）是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。
 ---
 
