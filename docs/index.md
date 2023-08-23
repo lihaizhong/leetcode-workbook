@@ -8,18 +8,18 @@ hero:
   tagline: 每天都在长脑子，好痒啊！！！
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /examples/markdown
+      text: 算法
+      link: /algorithm/
     - theme: alt
-      text: API Examples
-      link: /examples/api
+      text: 设计模式
+      link: /design-pattern/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 算法与数据结构
+    details: 算法是软件设计中特定问题的解题步骤。
+  - title: 设计模式
+    details: 设计模式是软件设计中常见问题的典型解决方案。
+  - title: 单元测试
+    details: 单元测试是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。
 ---
 

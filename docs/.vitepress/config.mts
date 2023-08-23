@@ -12,9 +12,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
-      { text: '案例', link: '/examples/markdown' },
       { text: '算法', link: '/algorithm/' },
-      { text: '设计模式', link: '/design-pattern/' }
+      { text: '设计模式', link: '/design-pattern/' },
+      { text: '案例', link: '/examples/' }
     ],
 
     sidebar: {
