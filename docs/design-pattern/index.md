@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # 设计模式
 
 ![设计模式](/assets/the-relationship-between-design-patterns.jpeg)

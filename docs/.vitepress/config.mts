@@ -10,6 +10,8 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    outlineTitle: '目录',
+
     nav: [
       { text: '主页', link: '/' },
       { text: '算法', link: '/algorithm/' },
@@ -45,6 +47,10 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/lihaizhong' }
-    ]
+    ],
+
+    search: {
+      provider: 'local'
+    }
   }
 })
