@@ -33,7 +33,8 @@ export default defineConfig({
         {
           text: '算法',
           items: [
-            { text: '两数之和', link: '/algorithm/两数之和' }
+            { text: '两数之和', link: '/algorithm/两数之和' },
+            { text: '两数相加', link: '/algorithm/两数相加' }
           ]
         }
       ],
