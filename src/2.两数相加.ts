@@ -28,23 +28,30 @@ function addTwoNumbers(
 ): ListNode | null {
   let l1 = ln1;
   let l2 = ln2;
+  // 头位置
   let head: ListNode | null = null;
+  // 游标位置
   let cursor: ListNode | null = null;
+  // 进位数字
   let carryOver = 0;
 
   while (l1 || l2) {
     const val1: number = l1?.val ?? 0;
     const val2: number = l2?.val ?? 0;
     const sum: number = val1 + val2 + carryOver;
+    // 获取个位数字
     const value: number = sum % 10;
 
+    // 获取进位数字
     carryOver = (sum / 10) >> 0;
 
     if (head === null) {
+      // 记录头的位置
       head = cursor = new ListNode(value);
     } else {
-      // @ts-ignore
-      cursor.next = new ListNode(value);
+      // 创建新节点
+      (cursor as unknown as ListNode).next = new ListNode(value);
+      // 游标移动到新节点
       cursor = (cursor as unknown as ListNode).next;
     }
 
@@ -57,6 +64,7 @@ function addTwoNumbers(
     }
   }
 
+  // 判断是否还需要进位
   if (carryOver > 0) {
     (cursor as unknown as ListNode).next = new ListNode(carryOver);
   }
