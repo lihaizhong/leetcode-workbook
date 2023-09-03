@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "LeetCodeBook",
   description: "算法练习册",
-  // assetsDir: '/.vitepress/assets',
+  assetsDir: '/vite_assets',
   markdown: {
     lineNumbers: true
   },

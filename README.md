@@ -11,6 +11,13 @@
 - [Structure Visualization](https://www.cs.usfca.edu/~galles/visualization/)
 - [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
 
+## 设计模式
+
+- [JavaScript 设计模式](https://www.freecodecamp.org/chinese/news/javascript-design-patterns-explained/)
+- [设计模式](https://refactoringguru.cn/design-patterns)
+- [Modern Web App Design Patterns](https://www.patterns.dev/)
+- [Design Patterns Game](https://designpatternsgame.com/)
+
 ## 图片压缩
 
 - [Optimizilla](https://imagecompressor.com/zh/)
