@@ -4,6 +4,19 @@
 
 > 这个项目主要用来学习算法。以及对算法的总结。
 
+## 算法可视化工具
+
+- [AlgorithmVisualizer](https://algorithm-visualizer.org/)
+- [VisualGo](https://visualgo.net/zh)
+- [Structure Visualization](https://www.cs.usfca.edu/~galles/visualization/)
+- [Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
+
+## 图片压缩
+
+- [Optimizilla](https://imagecompressor.com/zh/)
+- [TinyPNG](https://tinypng.com/)
+
 ## 其他
 
-- [编程帮--算法](http://www.biancheng.net/algorithm/what-is-algorithm.html)
+- [编程帮](http://www.biancheng.net/algorithm/what-is-algorithm.html)
+- [力扣](https://leetcode-cn.com/)
