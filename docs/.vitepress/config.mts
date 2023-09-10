@@ -1,10 +1,12 @@
 import { defineConfig } from 'vitepress'
+import path from 'node:path'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "LeetCodeBook",
   description: "算法练习册",
   assetsDir: '/vite_assets',
+  outDir: path.join(process.cwd(), 'dist'),
   markdown: {
     lineNumbers: true
   },

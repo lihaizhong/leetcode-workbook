@@ -10,6 +10,7 @@
     "docs:preview": "vitepress preview docs",
     "coverage": "serve ./coverage/lcov-report -p 7578",
     "build": "rm -rf release && tsc -p ./tsconfig.build.json",
+    "clear": "rm -rf dist coverage",
     "test": "jest"
   },
   "repository": {
