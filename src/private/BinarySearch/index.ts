@@ -1,6 +1,6 @@
-type ICompare = (a: number, b: number) => number
+export type ICompare = (a: number, b: number) => number
 
-const compare: ICompare = (a: number, b: number) => {
+export const compare: ICompare = (a: number, b: number) => {
   // 目标值小了
   if (a < b) {
     return -1
