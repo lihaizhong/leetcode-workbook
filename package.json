@@ -11,7 +11,7 @@
     "coverage": "serve ./coverage/lcov-report -p 7578",
     "build": "rm -rf release && tsc -p ./tsconfig.build.json",
     "clear": "rm -rf dist coverage",
-    "test": "jest"
+    "test": "jest --projects jest-bench.config.json"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "@types/jest": "^29.5.14",
     "biome": "^0.3.3",
     "jest": "^29.7.0",
+    "jest-bench": "^29.7.1",
     "medium-zoom": "^1.1.0",
     "serve": "^14.2.4",
     "ts-jest": "^29.2.5",
