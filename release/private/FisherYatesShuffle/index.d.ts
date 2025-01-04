@@ -3,4 +3,3 @@
  * @param {array<number>} values
  */
 export default function shuffle(values: number[]): number[];
-//# sourceMappingURL=index.d.ts.map

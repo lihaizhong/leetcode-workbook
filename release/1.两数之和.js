@@ -12,31 +12,18 @@
  * 方法一：暴力枚举
  * 方法二：哈希表
  */
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    // @lc code=start
-    function twoSum(nums, target) {
-        const map = new Map();
-        for (let i = 0; i < nums.length; i++) {
-            const num1 = nums[i];
-            const num2 = target - num1;
-            if (map.has(num2)) {
-                return [map.get(num2), i];
-            }
-            map.set(num1, i);
+// @lc code=start
+function twoSum(nums, target) {
+    const map = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        const n1 = nums[i];
+        const n2 = target - n1;
+        if (map.has(n2)) {
+            return [map.get(n2), i];
         }
-        return [];
+        map.set(n1, i);
     }
-    // @lc code=end
-    exports.default = twoSum;
-});
-//# sourceMappingURL=1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.js.map
+    return [];
+}
+// @lc code=end
+export default twoSum;
