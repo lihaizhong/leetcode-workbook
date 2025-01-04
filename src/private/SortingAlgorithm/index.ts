@@ -23,11 +23,11 @@ export function bubbleSort(arr: number[]): void {
 // #endregion bubble-sort
 
 /**
- * 快速排序<交换排序>
+ * 选择排序<选择排序>
  * @param arr
  */
-// #region quick-sort
-export function quickSort(arr: number[]): void {
+// #region selection-sort
+export function selectionSort(arr: number[]): void {
   for (let i = 0; i < arr.length; i++) {
     let minIndex: number = i;
 
@@ -45,44 +45,61 @@ export function quickSort(arr: number[]): void {
     }
   }
 }
-// #endregion quick-sort
+// #endregion selection-sort
 
 /**
- * 简单选择排序<选择排序>
+ * 插入排序
+ * @param arr
  */
-export function simpleSelectionSort() {}
-
-/**
- * 堆排序<选择排序>
- */
-export function heapSort() {}
-
-/**
- * 简单插入排序<插入排序>
- */
-export function simpleInsertionSort() {}
+// #region insertion-sort
+export function insertionSort(arr: number[]): void {}
+// #endregion insertion-sort
 
 /**
  * 希尔排序<插入排序>
  */
+// #region shell-sort
 export function shellSort() {}
+// #endregion shell-sort
 
 /**
  * 归并排序
  */
+// #region merge-sort
 export function mergeSort() {}
+// #endregion merge-sort
 
 /**
- * 基数排序
+ * 快速排序<交换排序>
  */
-export function radixSort() {}
+// #region quick-sort
+export function quickSort() {}
+// #endregion quick-sort
+
+/**
+ * 堆排序<选择排序>
+ */
+// #region heap-sort
+export function heapSort() {}
+// #endregion heap-sort
 
 /**
  * 计数排序
  */
+// #region counting-sort
 export function countingSort() {}
+// #endregion counting-sort
 
 /**
  * 桶排序
  */
+// #region bucket-sort
 export function bucketSort() {}
+// #endregion bucket-sort
+
+/**
+ * 基数排序
+ */
+// #region radix-sort
+export function radixSort() {}
+// #endregion radix-sort
