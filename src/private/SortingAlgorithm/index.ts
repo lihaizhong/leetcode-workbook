@@ -52,14 +52,50 @@ export function selectionSort(arr: number[]): void {
  * @param arr
  */
 // #region insertion-sort
-export function insertionSort(arr: number[]): void {}
+export function insertionSort(arr: number[]): void {
+  let preIndex: number;
+  let current: number;
+
+  for (let i = 1; i < arr.length; i++) {
+    preIndex = i - 1;
+    current = arr[i];
+
+    while (preIndex >= 0 && arr[preIndex] > current) {
+      arr[preIndex + 1] = arr[preIndex];
+      preIndex--;
+    }
+
+    arr[preIndex + 1] = current;
+  }
+}
 // #endregion insertion-sort
 
 /**
  * 希尔排序<插入排序>
  */
 // #region shell-sort
-export function shellSort() {}
+export function shellSort(arr: number[]): void {
+  let tmp: number;
+  let gap = 1;
+
+  // 动态定义间隔数列
+  while (gap < arr.length / 3) {
+    gap = gap * 3 + 1;
+  }
+
+  for (; gap > 0; gap = Math.floor(gap / 3)) {
+    for (let i = gap; i < arr.length; i++) {
+      let j = i - gap;
+      tmp = arr[i];
+
+      for (; j >= i && arr[j] > tmp; j -= gap) {
+        arr[j + gap] = arr[j];
+      }
+
+      arr[j + gap] = tmp;
+    }
+  }
+}
 // #endregion shell-sort
 
 /**

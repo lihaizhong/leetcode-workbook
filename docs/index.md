@@ -3,11 +3,11 @@
 layout: home
 
 hero:
-  name: "LeetCodeBook"
+  name: "Leet Code Book"
   text: "算法练习册"
   tagline: 每天都在长脑子，好痒啊！！！
   actions:
-    - theme: brand
+    - theme: alt
       text: 算法
       link: /algorithm/
     - theme: alt
