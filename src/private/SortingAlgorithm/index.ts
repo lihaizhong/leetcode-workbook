@@ -75,25 +75,28 @@ export function insertionSort(arr: number[]): void {
  */
 // #region shell-sort
 export function shellSort(arr: number[]): void {
-  let tmp: number;
+  // number pre column
+  const npc = 3;
   let gap = 1;
 
   // 动态定义间隔数列
-  while (gap < arr.length / 3) {
-    gap = gap * 3 + 1;
+  while (gap < arr.length / npc) {
+    gap = gap * npc + 1;
   }
 
-  for (; gap > 0; gap = Math.floor(gap / 3)) {
+  while (gap > 0) {
     for (let i = gap; i < arr.length; i++) {
+      const tmp = arr[i];
       let j = i - gap;
-      tmp = arr[i];
 
-      for (; j >= i && arr[j] > tmp; j -= gap) {
+      for (; j >= 0 && arr[j] > tmp; j -= gap) {
         arr[j + gap] = arr[j];
       }
 
       arr[j + gap] = tmp;
     }
+
+    gap = Math.floor(gap / npc)
   }
 }
 // #endregion shell-sort
