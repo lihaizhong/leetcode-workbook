@@ -12,6 +12,7 @@
  * 方法一：模拟
  */
 
+// #region list-node
 export class ListNode {
   val: number;
 
@@ -21,8 +22,10 @@ export class ListNode {
     this.val = val;
   }
 }
+// #endregion list-node
 
 // @lc code=start
+// #region add-two-numbers
 function addTwoNumbers(
   ln1: ListNode | null,
   ln2: ListNode | null
@@ -72,6 +75,7 @@ function addTwoNumbers(
 
   return head;
 }
+// #endregion add-two-numbers
 // @lc code=end
 
 export default addTwoNumbers;

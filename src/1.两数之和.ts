@@ -13,7 +13,26 @@
  * 方法二：哈希表
  */
 
+// #region two-sum-1
+export function twoSum1(nums: number[], target: number): number[] {
+  const { length } = nums;
+
+  for (let i = 0; i < length; i++) { // N
+    const n2 = target - nums[i]
+
+    for (let j = i + 1; j < length; j++) { // N
+      if (nums[j] === n2) {
+        return [i, j]
+      }
+    }
+  }
+
+  return [];
+}
+// #endregion two-sum-1
+
 // @lc code=start
+// #region two-sum
 function twoSum(nums: number[], target: number): number[] {
   const map = new Map();
 
@@ -30,6 +49,7 @@ function twoSum(nums: number[], target: number): number[] {
 
   return [];
 }
+// #endregion two-sum
 // @lc code=end
 
 export default twoSum;
