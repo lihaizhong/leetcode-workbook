@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: 设计模式
       link: /design-pattern/
+    - theme: alt
+      text: 其它
+      link: /others/
 
 features:
   - title: 算法与数据结构

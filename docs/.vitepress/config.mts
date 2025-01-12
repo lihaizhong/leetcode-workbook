@@ -38,6 +38,15 @@ export default defineConfig({
           text: '设计模式',
           items: []
         }
+      ],
+      '/others/': [
+        {
+          text: '其它',
+          items: [
+            { text: '字节与字符的区别', link: '/others/字节与字符的区别' },
+            { text: '位运算', link: '/others/位运算' }
+          ]
+        }
       ]
     },
 
