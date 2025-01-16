@@ -141,29 +141,31 @@ export function mergeSort(arr: number[]): void {
  */
 // #region quick-sort
 function partition(arr: number[], low: number, high: number): number {
-  let pivot = arr[low];
+  const pivot = arr[low];
+  let l = low;
+  let h = high;
 
-  while (low < high) {
-    while (low < high && arr[high] > pivot) {
-      --high;
+  while (l < h) {
+    while (l < h && arr[h] > pivot) {
+      --h;
     }
 
-    arr[low] = arr[high];
-    while (low < high && arr[low] <= pivot) {
-      ++low;
+    arr[l] = arr[h];
+    while (l < h && arr[l] <= pivot) {
+      ++l;
     }
 
-    arr[high] = arr[low];
+    arr[h] = arr[l];
   }
 
-  arr[low] = pivot;
+  arr[l] = pivot;
 
-  return low;
+  return l;
 }
 
 export function quickSort(arr: number[], low: number, high: number): void {
   if (low < high) {
-    let pivot = partition(arr, low, high);
+    const pivot = partition(arr, low, high);
     quickSort(arr, low, pivot - 1);
     quickSort(arr, pivot + 1, high);
   }
