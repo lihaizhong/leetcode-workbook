@@ -176,8 +176,46 @@ export function quickSort(arr: number[], low: number, high: number): void {
  * 堆排序<选择排序>
  */
 // #region heap-sort
+function heapify(arr: number[], i: number, len: number): void {
+  const left = i * 2 + 1;
+  const right = i * 2 + 2;
+  let largest = i;
+
+  if (left < len && arr[left] > arr[largest]) {
+    largest = left;
+  }
+
+  if (right < len && arr[right] > arr[largest]) {
+    largest = right;
+  }
+
+  if (largest !== i) {
+    swap(arr, i, largest);
+    heapify(arr, largest, len);
+  }
+}
+
+function swap(arr: number[], i: number, j: number): void {
+  const tmp = arr[i];
+
+  arr[i] = arr[j];
+  arr[j] = tmp;
+}
+
 export function heapSort(arr: number[]): void {
-  
+  // 建立大顶堆
+  for (let i = (arr.length / 2) << 0; i >= 0; i--) {
+    // 从第一个非叶子结点从下至上，从右至左调整结构
+    heapify(arr, i, arr.length);
+  }
+
+  // 调整堆结构 + 交换堆顶元素与末尾元素
+  for (let i = arr.length - 1; i > 0; i--) {
+    // 将堆顶元素与末尾元素进行交换
+    swap(arr, 0, i);
+    // 重新对堆进行调整
+    heapify(arr, 0, i);
+  }
 }
 // #endregion heap-sort
 

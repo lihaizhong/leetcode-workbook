@@ -25,5 +25,8 @@
 
 ## 其他
 
+- [JavaScript-Algorithms](https://github.com/sisterAn/JavaScript-Algorithms)
+- [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
+- [roadmap](https://javabetter.cn/xuexiluxian/qianduan.html)
 - [编程帮](http://www.biancheng.net/algorithm/what-is-algorithm.html)
 - [力扣](https://leetcode-cn.com/)

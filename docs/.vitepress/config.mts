@@ -15,9 +15,9 @@ export default defineConfig({
     outlineTitle: '目录',
 
     nav: [
-      { text: '主页', link: '/' },
       { text: '算法', link: '/algorithm/' },
-      { text: '设计模式', link: '/design-pattern/' }
+      { text: '设计模式', link: '/design-pattern/' },
+      { text: '路线图', link: 'https://roadmap.sh/' }
     ],
 
     sidebar: {
