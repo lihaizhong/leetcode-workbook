@@ -96,7 +96,7 @@ export function shellSort(arr: number[]): void {
       arr[j + gap] = tmp;
     }
 
-    gap = Math.floor(gap / npc)
+    gap = Math.floor(gap / npc);
   }
 }
 // #endregion shell-sort
@@ -129,7 +129,7 @@ export function mergeSort(arr: number[]): void {
     result.push(left.shift());
   }
 
-  while(right.length) {
+  while (right.length) {
     result.push(right.shift());
   }
   // merge end
@@ -223,7 +223,29 @@ export function heapSort(arr: number[]): void {
  * 计数排序
  */
 // #region counting-sort
-export function countingSort(arr: number[]): void {}
+export function countingSort(arr: number[], maxValue: number): void {
+  const bucketLength = maxValue + 1;
+  const bucket = new Array(bucketLength);
+  const length = arr.length;
+  let sortedIndex = 0;
+
+  for (let i = 0; i < length; i++) {
+    const value = arr[i];
+
+    if (!bucket[value]) {
+      bucket[value] = 0;
+    }
+
+    bucket[value]++;
+  }
+
+  for (let j = 0; j < bucketLength; j++) {
+    while (bucket[j] > 0) {
+      arr[sortedIndex++] = j;
+      bucket[j]--;
+    }
+  }
+}
 // #endregion counting-sort
 
 /**
