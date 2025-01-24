@@ -252,12 +252,86 @@ export function countingSort(arr: number[], maxValue: number): void {
  * 桶排序
  */
 // #region bucket-sort
-export function bucketSort(arr: number[]): void {}
+export function bucketSort(arr: number[], bucketSize: number = 5): void {
+  const { length } = arr;
+
+  if (length === 0) {
+    return;
+  }
+
+  let minValue = arr[0];
+  let maxValue = arr[0];
+
+  for (let i = 1; i < length; i++) {
+    const value = arr[i];
+
+    if (value < minValue) {
+      // 输入数据的最小值
+      minValue = value;
+    } else if (value > maxValue) {
+      // 输入数据的最大值
+      maxValue = value;
+    }
+  }
+
+  // 桶的初始化
+  const bucketCount = ~~((maxValue - minValue) / bucketSize) + 1;
+  const buckets = new Array(bucketCount);
+
+  for (let i = 0; i < bucketCount; i++) {
+    buckets[i] = [];
+  }
+
+  // 利用映射函数将数据分配到各个桶中
+  for (let i = 0; i < length; i++) {
+    const value = arr[i];
+
+    buckets[~~((value - minValue) / bucketSize)].push(value);
+  }
+
+  arr.length = 0;
+
+  for (let i = 0; i < bucketCount; i++) {
+    // 对每个桶进行排序，这里使用了插入排序
+    insertionSort(buckets[i]);
+
+    for (let j = 0; j < buckets[i].length; j++) {
+      arr.push(buckets[i][j]);
+    }
+  }
+}
 // #endregion bucket-sort
 
 /**
  * 基数排序
  */
 // #region radix-sort
-export function radixSort(arr: number[]): void {}
+export function radixSort(arr: number[], maxDigit: number): void {
+  const counter: number[][] = [];
+  let mod = 10;
+  let dev = 1;
+
+  for (let i = 0; i < maxDigit; i++, dev *= 10, mod *= 10) {
+    for (let j = 0; j < arr.length; j++) {
+      const bucket = ~~((arr[j] % mod) / dev);
+
+      if (counter[bucket] == null) {
+        counter[bucket] = [];
+      }
+
+      counter[bucket].push(arr[j]);
+    }
+
+    let pos = 0;
+    for (let j = 0; j < counter.length; j++) {
+      let value: number | null | undefined = null;
+
+      if (counter[j] != null) {
+        while ((value = counter[j].shift()) != null) {
+          arr[pos++] = value;
+        }
+      }
+    }
+  }
+}
 // #endregion radix-sort
