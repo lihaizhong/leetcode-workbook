@@ -30,9 +30,9 @@
     "medium-zoom": "^1.1.0",
     "rimraf": "^6.0.1",
     "serve": "^14.2.4",
-    "ts-jest": "^29.3.1",
+    "ts-jest": "^29.3.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2",
+    "typescript": "^5.8.3",
     "vitepress": "1.6.3",
     "vue": "^3.5.13"
   }
