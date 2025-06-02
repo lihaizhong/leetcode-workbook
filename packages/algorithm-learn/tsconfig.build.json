@@ -8,8 +8,8 @@
     "declarationMap": false,
     "sourceMap": false,
     "rootDir": "./src",
-    "outDir": "./release",
-    "declarationDir": "./release"
+    "outDir": "./dist",
+    "declarationDir": "./dist"
   },
   "exclude": [
     "src/**/*.test.ts",
