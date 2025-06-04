@@ -4,6 +4,10 @@
 
 > 这个项目主要用来学习算法。以及对算法的总结。
 
+## 基础学习
+
+- [Chrome for developer](https://developer.chrome.com/?hl=zh-cn)
+
 ## 算法可视化工具
 
 - [AlgorithmVisualizer](https://algorithm-visualizer.org/)
