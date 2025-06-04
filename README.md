@@ -18,6 +18,12 @@
 - [Modern Web App Design Patterns](https://www.patterns.dev/)
 - [Design Patterns Game](https://designpatternsgame.com/)
 
+## WebGL
+
+- [顶点着色器与片元着色器](https://www.cnblogs.com/airduce/p/10045193.html)
+- [解析顶点着色器和片元着色器](https://www.cnblogs.com/sdycxxl2010/p/12638983.html)
+- [WebGL的剪裁空间](https://www.cnblogs.com/mvrlink/p/17642759.html)
+
 ## 图片压缩
 
 - [Optimizilla](https://imagecompressor.com/zh/)
