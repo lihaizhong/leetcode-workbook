@@ -1,5 +1,6 @@
 import path from "path";
 import webpack from "webpack";
+import "webpack-dev-server";
 
 function getEntries() {
   const entries: Record<string, string> = {};

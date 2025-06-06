@@ -1,7 +1,7 @@
 {
   "name": "webgl-learn",
   "version": "1.0.0",
-  "description": "",
+  "description": "webgl学习",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.11.1",
   "devDependencies": {
     "@types/node": "^22.15.29",
     "@types/webpack": "^5.28.5",
@@ -17,6 +16,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "webpack": "^5.99.9",
-    "webpack-dev-server": "^5.2.1"
+    "webpack-dev-server": "^5.2.2"
   }
 }
