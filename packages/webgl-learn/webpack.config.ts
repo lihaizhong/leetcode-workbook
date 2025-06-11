@@ -33,8 +33,7 @@ function findAllEntries() {
   const htmlPlugins = Object.entries(inputEntries).map(
     ([filename, filepath]) => {
       const dirname = path.dirname(filepath);
-      const basename = path.basename(filepath, ".ts");
-      const profile = fs.readJSONSync(path.resolve(dirname, `${basename}.json`));
+      const profile = fs.readJSONSync(path.resolve(dirname, `index.json`));
 
       return new HtmlWebpackPlugin({
         title: profile.title || "WebGL Learn",
@@ -80,6 +79,17 @@ export default {
         exclude: /node_modules/,
       }
     ]
+  },
+
+  resolve: {
+    // Add `.ts` and `.tsx` as a resolvable extension.
+    extensions: [".ts", ".tsx", ".js"],
+    // Add support for TypeScripts fully qualified ESM imports.
+    extensionAlias: {
+     ".js": [".js", ".ts"],
+     ".cjs": [".cjs", ".cts"],
+     ".mjs": [".mjs", ".mts"]
+    }
   },
 
   plugins: [
