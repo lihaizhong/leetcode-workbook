@@ -1,4 +1,10 @@
-import { lifecycle, getCanvas, getWebGLContext, createShader, createProgram } from "./webgl-helper";
+import {
+  lifecycle,
+  getCanvas,
+  getWebGLContext,
+  createShader,
+  createProgram,
+} from "../../utils/webgl-helper";
 // 顶点着色器源码
 import vertexShaderSource from "./main.vert";
 // 片元着色器源码
@@ -9,9 +15,13 @@ lifecycle.ready(() => {
   const gl = getWebGLContext(palette);
 
   const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
-  const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+  const fragmentShader = createShader(
+    gl,
+    gl.FRAGMENT_SHADER,
+    fragmentShaderSource
+  );
 
-  if (!(vertexShader && fragmentShader)) {
+  if (vertexShader === null || fragmentShader === null) {
     return;
   }
 
@@ -24,4 +34,4 @@ lifecycle.ready(() => {
   gl.clear(gl.COLOR_BUFFER_BIT);
 
   gl.drawArrays(gl.POINTS, 0, 1);
-})
+});

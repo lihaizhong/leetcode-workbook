@@ -1,0 +1,83 @@
+import {
+  createProgram,
+  createShader,
+  getCanvas,
+  getWebGLContext,
+  type IColor,
+  lifecycle,
+  openFullScreenCanvas,
+  randomColor,
+} from "../../utils/webgl-helper";
+import vertexShaderSource from "./main.vert";
+import fragmentShaderSource from "./main.frag";
+
+interface IPoint {
+  x: number,
+  y: number,
+  color: IColor,
+}
+
+lifecycle.ready(() => {
+  const palette = getCanvas("palette");
+
+  openFullScreenCanvas(palette);
+
+  const gl = getWebGLContext(palette);
+
+  const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+  const fragmentShader = createShader(
+    gl,
+    gl.FRAGMENT_SHADER,
+    fragmentShaderSource
+  );
+
+  if (vertexShader === null || fragmentShader === null) {
+    return;
+  }
+
+  const program = createProgram(gl, vertexShader, fragmentShader);
+
+  gl.useProgram(program);
+
+  // 找到顶点着色器中的 a_Position 变量
+  const aPosition = gl.getAttribLocation(program, "a_Position");
+  // 找到顶点着色器中的 a_Screen_Size 变量
+  const aScreenSize = gl.getAttribLocation(program, "a_Screen_Size");
+  // 找到顶点着色器中的 u_Color 变量
+  const uColor = gl.getUniformLocation(program, "u_Color");
+
+  // 为顶点着色器中的 a_Screen_Size 变量传递画布尺寸
+  gl.vertexAttrib2f(aScreenSize, palette.width, palette.height);
+
+  // 存储点击位置的数组
+  const points: IPoint[] = [];
+  const clearCanvas = () => {
+    // 设置清屏颜色
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    // 用上一步设置的清空画布颜色清空画布
+    gl.clear(gl.COLOR_BUFFER_BIT);
+  }
+
+  palette.addEventListener("click", (event) => {
+    const x = event.pageX;
+    const y = event.pageY;
+    const color = randomColor();
+    
+    points.push({ x, y, color });
+    clearCanvas();
+
+    for (let i = 0; i < points.length; i++) {
+      const point = points[i];
+      const color = point.color;
+
+      // 为顶点着色器中的 u_Color 传递随机颜色
+      gl.uniform4f(uColor, color.r, color.g, color.b, color.a);
+      // 为顶点着色器中的 a_Position 传递顶点坐标
+      gl.vertexAttrib2f(aPosition, point.x, point.y);
+      // 绘制点
+      gl.drawArrays(gl.POINTS, 0, 1);
+    }
+  });
+
+  clearCanvas();
+});

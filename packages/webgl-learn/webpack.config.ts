@@ -8,7 +8,7 @@ import fs from "fs-extra";
 const __root = path.resolve(__dirname, ".");
 
 function findAllEntries() {
-  const entries = globSync("src/**/index.ts", {
+  const entries = globSync("src/pages/**/index.ts", {
     cwd: __root,
     absolute: true,
     onlyFiles: true,

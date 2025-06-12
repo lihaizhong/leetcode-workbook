@@ -8,6 +8,13 @@ export function getCanvas(id: string): HTMLCanvasElement {
   return document.getElementById(id) as HTMLCanvasElement;
 }
 
+export function openFullScreenCanvas(canvas: HTMLCanvasElement) {
+  canvas.style.width = `${window.innerWidth}px`;
+  canvas.style.height = `${window.innerHeight}px`;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
 export function getWebGLContext(canvas: HTMLCanvasElement): WebGLRenderingContext {
   return canvas.getContext('webgl') as WebGLRenderingContext;
 }
@@ -33,4 +40,20 @@ export function createProgram(gl: WebGLRenderingContext, vertexShader: WebGLShad
   gl.linkProgram(program);
 
   return program;
+}
+
+export interface IColor {
+  r: number;
+  g: number;
+  b: number;
+  a: number;
+}
+
+export function randomColor(): IColor {
+  return {
+    r: Math.random() * 255,
+    g: Math.random() * 255,
+    b: Math.random() * 255,
+    a: Math.random() * 1
+  };
 }
