@@ -1,6 +1,5 @@
 import {
   lifecycle,
-  getCanvas,
   getWebGLContext,
   createShader,
   createProgram,
@@ -11,8 +10,7 @@ import vertexShaderSource from "./main.vert";
 import fragmentShaderSource from "./main.frag";
 
 lifecycle.ready(() => {
-  const palette = getCanvas("palette");
-  const gl = getWebGLContext(palette);
+  const gl = getWebGLContext();
 
   const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
   const fragmentShader = createShader(

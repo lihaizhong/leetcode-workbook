@@ -1,11 +1,9 @@
 import {
   createProgram,
   createShader,
-  getCanvas,
   getWebGLContext,
   type IColor,
   lifecycle,
-  openFullScreenCanvas,
   randomColor,
 } from "../../utils/webgl-helper";
 import vertexShaderSource from "./main.vert";
@@ -18,11 +16,8 @@ interface IPoint {
 }
 
 lifecycle.ready(() => {
-  const palette = getCanvas("palette");
-
-  openFullScreenCanvas(palette);
-
-  const gl = getWebGLContext(palette);
+  const gl = getWebGLContext(true);
+  const canvas = gl.canvas as HTMLCanvasElement;
 
   const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
   const fragmentShader = createShader(
@@ -47,7 +42,7 @@ lifecycle.ready(() => {
   const uColor = gl.getUniformLocation(program, "u_Color");
 
   // 为顶点着色器中的 a_Screen_Size 变量传递画布尺寸
-  gl.vertexAttrib2f(aScreenSize, palette.width, palette.height);
+  gl.vertexAttrib2f(aScreenSize, canvas.width, canvas.height);
 
   // 存储点击位置的数组
   const points: IPoint[] = [];
@@ -58,7 +53,7 @@ lifecycle.ready(() => {
     gl.clear(gl.COLOR_BUFFER_BIT);
   }
 
-  palette.addEventListener("click", (event) => {
+  canvas.addEventListener("click", (event) => {
     const x = event.pageX;
     const y = event.pageY;
     const color = randomColor();

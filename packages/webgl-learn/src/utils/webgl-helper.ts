@@ -4,18 +4,16 @@ export const lifecycle = {
   }
 }
 
-export function getCanvas(id: string): HTMLCanvasElement {
-  return document.getElementById(id) as HTMLCanvasElement;
-}
+export function getWebGLContext(fullscreen: boolean = false): WebGLRenderingContext {
+  const canvas = document.getElementById("palette") as HTMLCanvasElement;
 
-export function openFullScreenCanvas(canvas: HTMLCanvasElement) {
-  canvas.style.width = `${window.innerWidth}px`;
-  canvas.style.height = `${window.innerHeight}px`;
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
+  if (fullscreen) {
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
 
-export function getWebGLContext(canvas: HTMLCanvasElement): WebGLRenderingContext {
   return canvas.getContext('webgl') as WebGLRenderingContext;
 }
 
