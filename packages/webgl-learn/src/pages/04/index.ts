@@ -4,6 +4,7 @@ import {
   createShader,
   createProgram,
   randomColor,
+  clearCanvas,
 } from "../../utils/webgl-helper";
 
 // 顶点着色器源码
@@ -58,9 +59,7 @@ lifecycle.ready(() => {
     0
   );
 
-  gl.clearColor(0.0, 0.0, 0.0, 1.0);
-
-  gl.clear(gl.COLOR_BUFFER_BIT);
+  clearCanvas(gl);
 
   gl.drawArrays(
     // 绘制图元设置为三角形

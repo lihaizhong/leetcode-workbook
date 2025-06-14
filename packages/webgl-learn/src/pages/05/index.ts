@@ -1,4 +1,5 @@
 import {
+  clearCanvas,
   createProgram,
   createShader,
   getWebGLContext,
@@ -51,12 +52,6 @@ lifecycle.ready(() => {
 
   // 存储点击位置的数组
   const triangles: ITriangle[] = [];
-  const clearCanvas = () => {
-    // 设置清屏颜色
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    // 用上一步设置的清空画布颜色清空画布
-    gl.clear(gl.COLOR_BUFFER_BIT);
-  }
 
   canvas.addEventListener("click", (event) => {
     const x = event.pageX;
@@ -77,7 +72,7 @@ lifecycle.ready(() => {
       return
     }
 
-    clearCanvas();
+    clearCanvas(gl);
 
     for (let i = 0; i < triangles.length; i++) {
       const { points, color } = triangles[i];
@@ -88,5 +83,5 @@ lifecycle.ready(() => {
     }
   });
 
-  clearCanvas();
+  clearCanvas(gl);
 });

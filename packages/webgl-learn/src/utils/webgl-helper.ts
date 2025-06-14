@@ -40,6 +40,13 @@ export function createProgram(gl: WebGLRenderingContext, vertexShader: WebGLShad
   return program;
 }
 
+export function clearCanvas(gl: WebGLRenderingContext): void {
+  // 设置清屏颜色
+  gl.clearColor(0.0, 0.0, 0.0, 1.0);
+  // 用上一步设置的清空画布颜色清空画布
+  gl.clear(gl.COLOR_BUFFER_BIT);
+}
+
 export interface IColor {
   r: number;
   g: number;

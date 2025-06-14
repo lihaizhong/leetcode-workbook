@@ -1,4 +1,5 @@
 import {
+  clearCanvas,
   createProgram,
   createShader,
   getWebGLContext,
@@ -46,12 +47,6 @@ lifecycle.ready(() => {
 
   // 存储点击位置的数组
   const points: IPoint[] = [];
-  const clearCanvas = () => {
-    // 设置清屏颜色
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    // 用上一步设置的清空画布颜色清空画布
-    gl.clear(gl.COLOR_BUFFER_BIT);
-  }
 
   canvas.addEventListener("click", (event) => {
     const x = event.pageX;
@@ -59,7 +54,7 @@ lifecycle.ready(() => {
     const color = randomColor();
     
     points.push({ x, y, color });
-    clearCanvas();
+    clearCanvas(gl);
 
     for (let i = 0; i < points.length; i++) {
       const point = points[i];
@@ -74,5 +69,5 @@ lifecycle.ready(() => {
     }
   });
 
-  clearCanvas();
+  clearCanvas(gl);
 });
