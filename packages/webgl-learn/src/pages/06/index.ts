@@ -42,6 +42,7 @@ lifecycle.ready(() => {
     clearCanvas(gl);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(points), gl.DYNAMIC_DRAW);
     gl.drawArrays(gl.LINE_LOOP, 0, points.length / 2);
+    gl.drawArrays(gl.POINTS, 0, points.length / 2);
   });
 
   clearCanvas(gl);
