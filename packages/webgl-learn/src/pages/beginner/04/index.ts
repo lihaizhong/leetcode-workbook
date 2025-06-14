@@ -5,7 +5,7 @@ import {
   createProgram,
   randomColor,
   clearCanvas,
-} from "../../utils/webgl-helper";
+} from "src/utils/webgl-helper";
 
 // 顶点着色器源码
 import vertexShaderSource from "./main.vert";

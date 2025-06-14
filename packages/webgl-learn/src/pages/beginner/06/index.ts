@@ -1,4 +1,11 @@
-import { clearCanvas, createProgram, createShader, getWebGLContext, lifecycle, randomColor } from "../../utils/webgl-helper";
+import {
+  clearCanvas,
+  createProgram,
+  createShader,
+  getWebGLContext,
+  lifecycle,
+  randomColor,
+} from "src/utils/webgl-helper";
 import vertexShaderSource from "./main.vert";
 import fragmentShaderSource from "./main.frag";
 
@@ -7,7 +14,11 @@ lifecycle.ready(() => {
   const canvas = gl.canvas as HTMLCanvasElement;
 
   const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
-  const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+  const fragmentShader = createShader(
+    gl,
+    gl.FRAGMENT_SHADER,
+    fragmentShaderSource
+  );
 
   if (vertexShader === null || fragmentShader === null) {
     return;
@@ -46,4 +57,4 @@ lifecycle.ready(() => {
   });
 
   clearCanvas(gl);
-})
+});

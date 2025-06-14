@@ -3,7 +3,7 @@ import {
   getWebGLContext,
   createShader,
   createProgram,
-} from "../../utils/webgl-helper";
+} from "src/utils/webgl-helper";
 // 顶点着色器源码
 import vertexShaderSource from "./main.vert";
 // 片元着色器源码

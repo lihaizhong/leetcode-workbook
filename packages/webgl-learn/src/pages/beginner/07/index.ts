@@ -6,7 +6,7 @@ import {
   createBuffer,
   randomColor,
   clearCanvas
-} from '../../utils/webgl-helper';
+} from 'src/utils/webgl-helper';
 import vertexShaderSource from './main.vert';
 import fragmentShaderSource from './main.frag';
 
