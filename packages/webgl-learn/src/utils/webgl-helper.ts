@@ -40,6 +40,20 @@ export function createProgram(gl: WebGLRenderingContext, vertexShader: WebGLShad
   return program;
 }
 
+export interface ICreateBufferOptions {
+  size: number;
+}
+
+export function createBuffer(gl: WebGLRenderingContext, vertexAttribute: GLint, options: ICreateBufferOptions): WebGLBuffer {
+  const buffer = gl.createBuffer();
+
+  gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+  gl.enableVertexAttribArray(vertexAttribute);
+  gl.vertexAttribPointer(vertexAttribute, options.size, gl.FLOAT, false, 0, 0);
+
+  return buffer;
+}
+
 export function clearCanvas(gl: WebGLRenderingContext): void {
   // 设置清屏颜色
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
