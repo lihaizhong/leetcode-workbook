@@ -89,6 +89,9 @@ export default {
      ".js": [".js", ".ts"],
      ".cjs": [".cjs", ".cts"],
      ".mjs": [".mjs", ".mts"]
+    },
+    alias: {
+      "src": path.resolve(__dirname, "src"),
     }
   },
 
