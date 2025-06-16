@@ -1,18 +1,19 @@
 import {
   clearCanvas,
+  createCircleVertex,
   createProgram,
   createShader,
   getWebGLContext,
   lifecycle,
 } from "src/utils/webgl-helper";
 import vertexShaderSource from "./main.vert";
-import fragmentShaderSource from "./main.frag";
+import fragShaderSource from "./main.frag";
 
 lifecycle.ready(() => {
   const gl = getWebGLContext(true);
   const canvas = gl.canvas as HTMLCanvasElement;
   const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
-  const fragShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+  const fragShader = createShader(gl, gl.FRAGMENT_SHADER, fragShaderSource);
 
   if (vertexShader === null || fragShader === null) {
     return;
@@ -32,14 +33,7 @@ lifecycle.ready(() => {
   gl.enableVertexAttribArray(aPosition);
   gl.enableVertexAttribArray(aColor);
 
-  // 存储顶点信息的数组
-  const positions = [
-    [30, 300, 255, 0, 0, 1], //V0
-    [300, 300, 255, 0, 0, 1], //V1
-    [30, 30, 255, 0, 0, 1], //V2
-    [300, 30, 0, 255, 0, 1], //V3
-  ].flat();
-
+  const positions = createCircleVertex(300, 300, 100, 50);
   const buffer = gl.createBuffer();
 
   gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -49,5 +43,5 @@ lifecycle.ready(() => {
 
   clearCanvas(gl);
 
-  gl.drawArrays(gl.TRIANGLE_STRIP, 0, positions.length / 6);
+  gl.drawArrays(gl.TRIANGLE_FAN, 0, positions.length / 6);
 });
