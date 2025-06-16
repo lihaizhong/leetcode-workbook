@@ -32,13 +32,6 @@ lifecycle.ready(() => {
   gl.enableVertexAttribArray(aPosition);
   gl.enableVertexAttribArray(aColor);
 
-  const positionBuffer = gl.createBuffer();
-
-  gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-
-  gl.vertexAttribPointer(aPosition, 2, gl.FLOAT, false, 24, 0);
-  gl.vertexAttribPointer(aColor, 4, gl.FLOAT, false, 24, 8);
-
   // 存储顶点信息的数组
   const positions = [
     [30, 30, 255, 0, 0, 1],    //V0
@@ -47,6 +40,11 @@ lifecycle.ready(() => {
     [300, 30, 0, 255, 0, 1]    //V3
   ].flat();
 
+  const positionBuffer = gl.createBuffer();
+
+  gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+  gl.vertexAttribPointer(aPosition, 2, gl.FLOAT, false, 24, 0);
+  gl.vertexAttribPointer(aColor, 4, gl.FLOAT, false, 24, 8);
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
 
   // 存储顶点索引的数组
