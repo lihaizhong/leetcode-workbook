@@ -42,11 +42,11 @@ function findAllEntries() {
         chunks: [filename],
       });
     }
-  )
+  );
 
   return {
     inputEntries,
-    htmlPlugins
+    htmlPlugins,
   };
 }
 
@@ -58,9 +58,9 @@ const pages = findAllEntries();
  */
 export default {
   mode: "development",
-  
+
   entry: pages.inputEntries,
-  
+
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
@@ -77,8 +77,26 @@ export default {
         test: /\.(glsl|vert|frag)$/,
         use: ["raw-loader"],
         exclude: /node_modules/,
-      }
-    ]
+      },
+      {
+        test: /\.(bmp|svg|png|jpe?g|gif|webp|tiff)$/,
+        type: "asset",
+        parser: {
+          dataUrlCondition: {
+            // 小于 10kb 的图片会被 Base64 处理
+            maxSize: 10 * 1024,
+          },
+        },
+        generator: {
+          // 将图片文件输出到 static/imgs 目录中
+          // 将图片文件命名 [hash:8][ext][query]
+          // [hash:8]: hash值取8位
+          // [ext]: 使用之前的文件扩展名
+          // [query]: 添加之前的query参数
+          filename: "static/imgs/[hash:8][ext][query]",
+        },
+      },
+    ],
   },
 
   resolve: {
@@ -86,16 +104,14 @@ export default {
     extensions: [".ts", ".tsx", ".js"],
     // Add support for TypeScripts fully qualified ESM imports.
     extensionAlias: {
-     ".js": [".js", ".ts"],
-     ".cjs": [".cjs", ".cts"],
-     ".mjs": [".mjs", ".mts"]
+      ".js": [".js", ".ts"],
+      ".cjs": [".cjs", ".cts"],
+      ".mjs": [".mjs", ".mts"],
     },
     alias: {
-      "src": path.resolve(__dirname, "src"),
-    }
+      src: path.resolve(__dirname, "src"),
+    },
   },
 
-  plugins: [
-    ...pages.htmlPlugins,
-  ]
+  plugins: [...pages.htmlPlugins],
 } satisfies webpack.Configuration;

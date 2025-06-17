@@ -192,3 +192,14 @@ export function createRingVertex(
     indices,
   };
 }
+
+export function createImage(src: string): Promise<HTMLImageElement> {
+  return new Promise<HTMLImageElement>((resolve, reject) => {
+    const image = new Image()
+
+    image.src = src;
+    image.crossOrigin = "";
+    image.onload = () => resolve(image);
+    image.onerror = reject;
+  })
+}
