@@ -27,3 +27,5 @@
 
 - [Webpack完整打包流程分析](https://juejin.cn/post/7158707111315111972)
 - [webpack 5](https://juejin.cn/column/7136913011733708813)
+- [amandakelake](https://github.com/amandakelake/blog)
+- [gogo2027](https://juejin.cn/user/1399039147900990/posts)
