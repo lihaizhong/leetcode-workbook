@@ -8,7 +8,12 @@
 
 - [Chrome for developer](https://developer.chrome.com/?hl=zh-cn)
 
-## 算法可视化工具
+## 算法
+
+- [JavaScript-Algorithms](https://github.com/sisterAn/JavaScript-Algorithms)
+- [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
+
+### 算法可视化工具
 
 - [AlgorithmVisualizer](https://algorithm-visualizer.org/)
 - [VisualGo](https://visualgo.net/zh)
@@ -35,8 +40,7 @@
 
 ## 其他
 
-- [JavaScript-Algorithms](https://github.com/sisterAn/JavaScript-Algorithms)
-- [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
 - [roadmap](https://javabetter.cn/xuexiluxian/qianduan.html)
 - [编程帮](http://www.biancheng.net/algorithm/what-is-algorithm.html)
 - [力扣](https://leetcode-cn.com/)
+- [使用魔搭开发自己的语音AI：从入门到精通](https://developer.aliyun.com/article/1103557?spm=a2c6h.12873581.technical-group.dArticle1103557.c08a36e4KJVNZP)
