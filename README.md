@@ -33,6 +33,10 @@
 - [解析顶点着色器和片元着色器](https://www.cnblogs.com/sdycxxl2010/p/12638983.html)
 - [WebGL的剪裁空间](https://www.cnblogs.com/mvrlink/p/17642759.html)
 
+## TypeScript
+
+- [TypeScript手册](https://bosens-china.github.io/Typescript-manual/)
+
 ## 图片压缩
 
 - [Optimizilla](https://imagecompressor.com/zh/)
