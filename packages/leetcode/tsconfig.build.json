@@ -1,12 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
     "incremental": false,
     "declaration": true,
     "declarationMap": false,
-    "sourceMap": false,
+    "sourceMap": true,
     "rootDir": "./src",
     "outDir": "./dist",
     "declarationDir": "./dist"
