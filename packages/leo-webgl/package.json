@@ -1,6 +1,8 @@
 {
-  "name": "webgl-learn",
+  "name": "leo-webgl",
   "version": "1.0.0",
+  "private": true,
+  "type": "module",
   "description": "WebGL 基础学习",
   "scripts": {
     "dev": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack serve",

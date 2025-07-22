@@ -1,6 +1,8 @@
 {
-  "name": "algorithm-learn",
+  "name": "leetcode",
   "version": "1.0.0",
+  "private": true,
+  "type": "module",
   "description": "算法习题册",
   "main": "index.js",
   "scripts": {

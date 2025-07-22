@@ -15,6 +15,7 @@
         "tsbuildinfo",
         "unmocked",
         "vitepress",
-        "Vlissides"
+        "Vlissides",
+        "webgl"
     ]
 }
