@@ -12,10 +12,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/generator": "^7.27.5",
-    "@babel/parser": "^7.27.5",
-    "@babel/traverse": "^7.27.4",
-    "@babel/types": "^7.27.6",
+    "@babel/generator": "^7.28.0",
+    "@babel/parser": "^7.28.0",
+    "@babel/traverse": "^7.28.0",
+    "@babel/types": "^7.28.2",
     "fs-extra": "^11.3.0",
     "tapable": "^2.2.2"
   }

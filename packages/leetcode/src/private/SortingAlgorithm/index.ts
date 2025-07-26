@@ -9,12 +9,15 @@
  */
 // #region bubble-sort
 export function bubbleSort(arr: number[]): void {
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = 0; j < arr.length - 1 - i; j++) {
+  const lastIndex = arr.length - 1;
+
+  for (let i = 0; i < lastIndex; i++) {
+    // 因为每次冒泡都会将最大的元素放到最后，所以下一次冒泡就不需要比较最后一个元素
+    for (let j = 0; j < lastIndex - i; j++) {
       // 如果前一个元素大于后一个元素，则交换
-      if (arr[j] > arr[j + 1]) {
-        const tmp = arr[j];
-        arr[j] = arr[j + 1];
+      if (arr[j]! > arr[j + 1]!) {
+        const tmp = arr[j]!;
+        arr[j] = arr[j + 1]!;
         arr[j + 1] = tmp;
       }
     }
