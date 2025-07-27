@@ -23,15 +23,15 @@ export default function levensheinDistance(
   const space: number[] = new Array(targetLength);
 
   for (let i = 0; i < sourceLength; i++) {
-    const sourceChar: string = source[i];
+    const sourceChar: string = source[i]!;
     let temp: number = i;
 
     for (let j = 0; j < targetLength; j++) {
-      const targetChar: string = target[j];
+      const targetChar: string = target[j]!;
       // 获取前一个数值
-      const prevDistance: number = j === 0 ? i + 1 : space[j - 1];
+      const prevDistance: number = j === 0 ? i + 1 : space[j - 1]!;
       // 获取上一个数值
-      const topDistance: number = space[j] === undefined ? j + 1 : space[j];
+      const topDistance: number = space[j]! === undefined ? j + 1 : space[j]!;
       // 判断是否需要修改
       const flag: number = sourceChar === targetChar ? 0 : 1;
       // 获取增，删，改和不变得到的最小值
@@ -48,5 +48,5 @@ export default function levensheinDistance(
   }
 
   // 获取数组的最后一位，即编辑距离
-  return space[targetLength - 1];
+  return space[targetLength - 1]!;
 }

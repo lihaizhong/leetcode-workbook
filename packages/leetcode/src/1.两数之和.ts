@@ -18,7 +18,7 @@ export function twoSum1(nums: number[], target: number): number[] {
   const { length } = nums;
 
   for (let i = 0; i < length; i++) { // N
-    const n2 = target - nums[i]
+    const n2 = target - nums[i]!
 
     for (let j = i + 1; j < length; j++) { // N
       if (nums[j] === n2) {
@@ -37,7 +37,7 @@ function twoSum(nums: number[], target: number): number[] {
   const map = new Map();
 
   for (let i = 0; i < nums.length; i++) {
-    const n1 = nums[i];
+    const n1 = nums[i]!;
     const n2 = target - n1;
 
     if (map.has(n2)) {

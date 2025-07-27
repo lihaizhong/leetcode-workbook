@@ -32,10 +32,10 @@ export default function BinarySearch(
 
   do {
     const middle: number = Math.round(low + high);
-    const status: number = internal_compare(target, list[middle]);
+    const status: number = internal_compare(target, list[middle]!);
 
     if (status === 0) {
-      return list[middle];
+      return list[middle]!;
     }
 
     if (status === 1) {

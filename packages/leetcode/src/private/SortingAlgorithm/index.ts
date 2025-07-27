@@ -36,14 +36,14 @@ export function selectionSort(arr: number[]): void {
 
     for (let j = i + 1; j < arr.length; j++) {
       // 如果当前最小的元素大于比较的元素，则交换
-      if (arr[minIndex] > arr[j]) {
+      if (arr[minIndex]! > arr[j]!) {
         minIndex = j;
       }
     }
 
     if (minIndex !== i) {
-      const tmp = arr[i];
-      arr[i] = arr[minIndex];
+      const tmp = arr[i]!;
+      arr[i] = arr[minIndex]!;
       arr[minIndex] = tmp;
     }
   }
@@ -61,10 +61,10 @@ export function insertionSort(arr: number[]): void {
 
   for (let i = 1; i < arr.length; i++) {
     preIndex = i - 1;
-    current = arr[i];
+    current = arr[i]!;
 
-    while (preIndex >= 0 && arr[preIndex] > current) {
-      arr[preIndex + 1] = arr[preIndex];
+    while (preIndex >= 0 && arr[preIndex]! > current) {
+      arr[preIndex + 1] = arr[preIndex]!;
       preIndex--;
     }
 
@@ -89,11 +89,11 @@ export function shellSort(arr: number[]): void {
 
   while (gap > 0) {
     for (let i = gap; i < arr.length; i++) {
-      const tmp = arr[i];
+      const tmp = arr[i]!;
       let j = i - gap;
 
-      for (; j >= 0 && arr[j] > tmp; j -= gap) {
-        arr[j + gap] = arr[j];
+      for (; j >= 0 && arr[j]! > tmp; j -= gap) {
+        arr[j + gap] = arr[j]!;
       }
 
       arr[j + gap] = tmp;
@@ -121,19 +121,19 @@ export function mergeSort(arr: number[]): void {
   const result = [];
 
   while (left.length && right.length) {
-    if (left[0] <= right[0]) {
-      result.push(left.shift());
+    if (left[0]! <= right[0]!) {
+      result.push(left.shift()!);
     } else {
-      result.push(right.shift());
+      result.push(right.shift()!);
     }
   }
 
   while (left.length) {
-    result.push(left.shift());
+    result.push(left.shift()!);
   }
 
   while (right.length) {
-    result.push(right.shift());
+    result.push(right.shift()!);
   }
   // merge end
 }
@@ -144,21 +144,21 @@ export function mergeSort(arr: number[]): void {
  */
 // #region quick-sort
 function partition(arr: number[], low: number, high: number): number {
-  const pivot = arr[low];
+  const pivot = arr[low]!;
   let l = low;
   let h = high;
 
   while (l < h) {
-    while (l < h && arr[h] > pivot) {
+    while (l < h && arr[h]! > pivot) {
       --h;
     }
 
-    arr[l] = arr[h];
-    while (l < h && arr[l] <= pivot) {
+    arr[l] = arr[h]!;
+    while (l < h && arr[l]! <= pivot) {
       ++l;
     }
 
-    arr[h] = arr[l];
+    arr[h] = arr[l]!;
   }
 
   arr[l] = pivot;
@@ -184,11 +184,11 @@ function heapify(arr: number[], i: number, len: number): void {
   const right = i * 2 + 2;
   let largest = i;
 
-  if (left < len && arr[left] > arr[largest]) {
+  if (left < len && arr[left]! > arr[largest]!) {
     largest = left;
   }
 
-  if (right < len && arr[right] > arr[largest]) {
+  if (right < len && arr[right]! > arr[largest]!) {
     largest = right;
   }
 
@@ -199,9 +199,9 @@ function heapify(arr: number[], i: number, len: number): void {
 }
 
 function swap(arr: number[], i: number, j: number): void {
-  const tmp = arr[i];
+  const tmp = arr[i]!;
 
-  arr[i] = arr[j];
+  arr[i] = arr[j]!;
   arr[j] = tmp;
 }
 
@@ -233,7 +233,7 @@ export function countingSort(arr: number[], maxValue: number): void {
   let sortedIndex = 0;
 
   for (let i = 0; i < length; i++) {
-    const value = arr[i];
+    const value = arr[i]!;
 
     if (!bucket[value]) {
       bucket[value] = 0;
@@ -262,11 +262,11 @@ export function bucketSort(arr: number[], bucketSize: number = 5): void {
     return;
   }
 
-  let minValue = arr[0];
-  let maxValue = arr[0];
+  let minValue = arr[0]!;
+  let maxValue = arr[0]!;
 
   for (let i = 1; i < length; i++) {
-    const value = arr[i];
+    const value = arr[i]!;
 
     if (value < minValue) {
       // 输入数据的最小值
@@ -287,7 +287,7 @@ export function bucketSort(arr: number[], bucketSize: number = 5): void {
 
   // 利用映射函数将数据分配到各个桶中
   for (let i = 0; i < length; i++) {
-    const value = arr[i];
+    const value = arr[i]!;
 
     buckets[~~((value - minValue) / bucketSize)].push(value);
   }
@@ -316,13 +316,13 @@ export function radixSort(arr: number[], maxDigit: number): void {
 
   for (let i = 0; i < maxDigit; i++, dev *= 10, mod *= 10) {
     for (let j = 0; j < arr.length; j++) {
-      const bucket = ~~((arr[j] % mod) / dev);
+      const bucket = ~~((arr[j]! % mod) / dev);
 
       if (counter[bucket] == null) {
         counter[bucket] = [];
       }
 
-      counter[bucket].push(arr[j]);
+      counter[bucket].push(arr[j]!);
     }
 
     let pos = 0;
@@ -330,7 +330,7 @@ export function radixSort(arr: number[], maxDigit: number): void {
       let value: number | null | undefined = null;
 
       if (counter[j] != null) {
-        while ((value = counter[j].shift()) != null) {
+        while ((value = counter[j]!.shift()) != null) {
           arr[pos++] = value;
         }
       }

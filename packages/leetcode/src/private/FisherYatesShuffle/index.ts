@@ -5,9 +5,9 @@
 export default function shuffle(values: number[]): number[] {
   for (let i = 0; i < values.length; i++) {
     const randomIndex: number = Math.floor(Math.random() * (i + 1));
-    const itemAtIndex: number = values[i];
+    const itemAtIndex: number = values[i]!;
 
-    values[i] = values[randomIndex];
+    values[i] = values[randomIndex]!;
     values[randomIndex] = itemAtIndex;
   }
 
